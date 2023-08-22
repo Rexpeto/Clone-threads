@@ -16,7 +16,12 @@ const threadSchema = new Schema({
     default: Date.now,
   },
   parentId: String,
-  children: [{ type: Schema.Types.ObjectId, ref: "Thread" }],
+  children: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Thread",
+    },
+  ],
 });
 
 const Thread = models.Thread || model("Thread", threadSchema);
